@@ -16,10 +16,12 @@ def handler(event, context):
             model = ModelPredict()
             
             # Process / Evaluate
+            inputs = []
             outputs = []
             start_time = datetime.now()
             for input in request['inputs']:
                 value = model.evaluate(input)
+                inputs.append(input)
                 outputs.append(value)
             end_time = datetime.now()
 
@@ -27,6 +29,7 @@ def handler(event, context):
             results = {
                 "success": True,
                 "message": "",
+                "inputs": inputs,
                 "outputs": outputs,
                 "metadata": {
                     "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
