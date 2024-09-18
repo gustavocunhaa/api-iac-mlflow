@@ -10,7 +10,13 @@ NOME_EXPERIMENTO = "Iris Experiment"
 
 # DATA AND EXPERIMENT TRACKING
 iris = fetch_ucirepo(id=53)  
-x = iris.data.features 
+x = iris.data.features
+x = x.rename(columns={
+    "sepal length": "sepal_length",
+    "sepal width":  "sepal_width",
+    "petal length": "petal_length",
+    "petal width":  "petal_width"
+})
 y = iris.data.targets 
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=SEED)
