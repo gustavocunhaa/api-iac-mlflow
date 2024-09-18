@@ -1,20 +1,15 @@
-import yaml
-import mlflow
+import os
+from pathlib import Path
+import pickle
 import pandas as pd
 
 class ModelPredict():
 
-    def __init__(self, logged_model='runs:/847d65c741014c9cad0a4fd7c86ba72f/iris_classifier'):
+    def __init__(self):
         
-        with open("src/config.yaml", 'r') as f:
-            try:
-                configs = yaml.safe_load(f)
-            except yaml.YAMLError as exc:
-                print(exc)
-
-        mlflow.set_tracking_uri(configs['traking_uri'])
-        
-        self.loaded_model = mlflow.pyfunc.load_model(logged_model)
+        MODEL_PATH = Path(f"{os.getcwd()}/src/model/model.pkl")
+        with open(MODEL_PATH, "rb") as input_file:
+            self.loaded_model = pickle.load(input_file)
 
     def process_input(self, features):
         df = pd.DataFrame(features, index=[0])
