@@ -1,11 +1,12 @@
 from constructs import Construct
 from aws_cdk import Duration, aws_lambda, aws_events, aws_events_targets, aws_logs
 from aws.configs import VERSION_PYTHON, LAMBDA_WARMUP
+from aws.iam.skeleton.infrastructure import IAMPolicies
 
 
 class LambdaApi(Construct):
     
-        def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+        def __init__(self, scope: Construct, construct_id: str, iam_policies: IAMPolicies, **kwargs) -> None:
             super().__init__(scope, construct_id, **kwargs)
             
             # Lambda code and function creation
@@ -19,7 +20,7 @@ class LambdaApi(Construct):
             self.function = aws_lambda.DockerImageFunction(self, 'Function',
                 code = code_image,
                 timeout = Duration.seconds(30),
-                memory_size = 1024
+                memory_size = 200
             )
 
             # Lambda log group explicit creation
@@ -34,3 +35,10 @@ class LambdaApi(Construct):
                 handler = self.function,
                 event = aws_events.RuleTargetInput.from_object({"warmup": True})
             ))
+
+            # Lambda policies for resources
+            all_policies = [
+                  *iam_policies.policies_s3_main
+            ]
+            for policy in all_policies:
+                self.function.add_to_role_policy(policy)

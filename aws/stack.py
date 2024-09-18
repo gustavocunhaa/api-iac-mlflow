@@ -6,6 +6,7 @@ from aws.configs import PROJECT_NAME
 # main construct imports
 from aws.api_gateway.main.infrastructure import ApiGateway
 from aws.lambda_.api.infrastructure      import LambdaApi
+from aws.iam.skeleton.infrastructure     import IAMPolicies
 
 class SkeletonStack(Stack):
 
@@ -13,8 +14,9 @@ class SkeletonStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # Main Constructs
-        lambda_api       = LambdaApi(self, "LambdaApi")
-        api_gateway      = ApiGateway(self, "ApiGw", lambda_api.function)
+        iam_policies = IAMPolicies(self, "IAMPolicies")
+        lambda_api   = LambdaApi(self, "LambdaApi", iam_policies)
+        api_gateway  = ApiGateway(self, "ApiGw", lambda_api.function)
 
         Tags.of(self).add("projeto", PROJECT_NAME)
 
