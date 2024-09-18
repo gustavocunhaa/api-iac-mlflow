@@ -21,3 +21,6 @@ API_USERS = [
 LAMBDA_WARMUP = {
     "parameter": "cron(*/2 * * * ? *)"
 }
+
+# Memory capacity in MB
+LAMBDA_MEMORY = 1024

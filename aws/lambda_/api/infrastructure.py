@@ -1,6 +1,6 @@
 from constructs import Construct
 from aws_cdk import Duration, aws_lambda, aws_events, aws_events_targets, aws_logs
-from aws.configs import VERSION_PYTHON, LAMBDA_WARMUP
+from aws.configs import VERSION_PYTHON, LAMBDA_WARMUP, LAMBDA_MEMORY
 from aws.iam.skeleton.infrastructure import IAMPolicies
 
 
@@ -20,7 +20,7 @@ class LambdaApi(Construct):
             self.function = aws_lambda.DockerImageFunction(self, 'Function',
                 code = code_image,
                 timeout = Duration.seconds(30),
-                memory_size = 200
+                memory_size = LAMBDA_MEMORY
             )
 
             # Lambda log group explicit creation

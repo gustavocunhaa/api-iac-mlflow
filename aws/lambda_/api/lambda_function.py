@@ -12,7 +12,7 @@ def handler(event, context):
     else:
         try:
             # Input Request
-            request = json.loads(json.dumps(event['body']))
+            request = json.loads(event['body'])
             model = ModelPredict()
             
             # Process / Evaluate
