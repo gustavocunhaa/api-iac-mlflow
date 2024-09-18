@@ -1,0 +1,24 @@
+# Docker Ignore file meant to reduce build context to only
+# the relevant python modules in this project repo for
+# lambdas in aws/lambda_ folder, as they are the only ones
+# that need to be deployed using docker.
+
+# Ignore everything by default
+*
+
+# Include __init__.py files in all directories
+# for Python to recognize the directories as packages
+!**/__init__.py
+
+# Include app requirements file
+!requirements.app.txt
+
+# Include main modules and files
+!src/
+
+# Include configs, utils and lambdas from aws
+!aws/
+aws/*
+!aws/__init__.py
+!aws/configs.py
+!aws/lambda_/
