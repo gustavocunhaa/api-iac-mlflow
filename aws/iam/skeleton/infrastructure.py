@@ -6,7 +6,7 @@ class IAMPolicies(Construct):
         def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
             super().__init__(scope, construct_id, **kwargs)
 
-            s3_bucket = "s3://a3data-mlflow-storage"
+            s3_bucket = "a3data-mlflow-storage"
             s3_folder = "mlflow"
 
             # Policies for accessing main S3 bucket
