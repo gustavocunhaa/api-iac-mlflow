@@ -4,9 +4,9 @@ from sklearn.metrics import accuracy_score
 
 class ExperimentMlflow():
 
-    def __init__(self, nome_experimento):
+    def __init__(self, uri_traking, nome_experimento):
         
-        mlflow.set_tracking_uri("http://18.232.73.98:5000/")
+        mlflow.set_tracking_uri(uri_traking)
 
         try:
             self.experiment_id = mlflow.create_experiment(nome_experimento)        
