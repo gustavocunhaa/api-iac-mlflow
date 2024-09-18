@@ -1,3 +1,9 @@
+# AWS CDK
+.cdk.staging/
+cdk.out/
+node_modules*
+package*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
