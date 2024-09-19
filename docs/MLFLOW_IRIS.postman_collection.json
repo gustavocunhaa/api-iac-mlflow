@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "47cbe26b-8e45-4bad-927d-f4b9b5a9cbd4",
+		"name": "MLFLOW_IRIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23023771"
+	},
+	"item": [
+		{
+			"name": "irisMlflow_v1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"inputs\": [\n        {\n            \"sepal_length\" : 6.4,\n            \"sepal_width\": 2.8,\n            \"petal_length\": 5.6,\n            \"petal_width\": 2.2\n        },\n        {\n            \"sepal_length\" : 20.1,\n            \"sepal_width\": 7.8,\n            \"petal_length\": 2.9,\n            \"petal_width\": 10.3\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3y8ahf4shk.execute-api.us-east-1.amazonaws.com/dev/irisMlflow_v1",
+					"protocol": "https",
+					"host": [
+						"3y8ahf4shk",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"irisMlflow_v1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1_input_test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inputs\": [\n        {\n            \"sepal_length\" : 6.4,\n            \"sepal_width\": 2.8,\n            \"petal_length\": 5.6,\n            \"petal_width\": 2.2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://3y8ahf4shk.execute-api.us-east-1.amazonaws.com/dev/irisMlflow_v1",
+							"protocol": "https",
+							"host": [
+								"3y8ahf4shk",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"irisMlflow_v1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 19 Sep 2024 00:50:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "252"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "941ad907-bee6-4b55-93fc-2d3ef9c2ec82"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "eU9GvGxWIAMEptQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66eb755e-56e39c1c57be258a58076699;Parent=6cd4dc23b0f13afb;Sampled=0;Lineage=1:818ba116:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"\",\n    \"inputs\": [\n        {\n            \"sepal_length\": 6.4,\n            \"sepal_width\": 2.8,\n            \"petal_length\": 5.6,\n            \"petal_width\": 2.2\n        }\n    ],\n    \"outputs\": [\n        {\n            \"predict\": \"Iris-virginica\"\n        }\n    ],\n    \"metadata\": {\n        \"timestamp\": \"2024-09-19T00:50:38Z\",\n        \"processing_time_ms\": 4.831\n    }\n}"
+				},
+				{
+					"name": "2_inputs_test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inputs\": [\n        {\n            \"sepal_length\" : 6.4,\n            \"sepal_width\": 2.8,\n            \"petal_length\": 5.6,\n            \"petal_width\": 2.2\n        },\n        {\n            \"sepal_length\" : 20.1,\n            \"sepal_width\": 7.8,\n            \"petal_length\": 2.9,\n            \"petal_width\": 10.3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://3y8ahf4shk.execute-api.us-east-1.amazonaws.com/dev/irisMlflow_v1",
+							"protocol": "https",
+							"host": [
+								"3y8ahf4shk",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"irisMlflow_v1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 19 Sep 2024 00:50:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "e90ed06a-4495-4083-96b3-a699974162b4"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "eU9CIH6zoAMEZ1g="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66eb7540-7d4589186412c57c1acc7680;Parent=6ccc8dc92c522446;Sampled=0;Lineage=1:818ba116:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"\",\n    \"inputs\": [\n        {\n            \"sepal_length\": 6.4,\n            \"sepal_width\": 2.8,\n            \"petal_length\": 5.6,\n            \"petal_width\": 2.2\n        },\n        {\n            \"sepal_length\": 20.1,\n            \"sepal_width\": 7.8,\n            \"petal_length\": 2.9,\n            \"petal_width\": 10.3\n        }\n    ],\n    \"outputs\": [\n        {\n            \"predict\": \"Iris-virginica\"\n        },\n        {\n            \"predict\": \"Iris-versicolor\"\n        }\n    ],\n    \"metadata\": {\n        \"timestamp\": \"2024-09-19T00:50:08Z\",\n        \"processing_time_ms\": 9.624\n    }\n}"
+				}
+			]
+		}
+	]
+}
