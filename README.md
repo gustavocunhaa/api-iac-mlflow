@@ -1,8 +1,12 @@
 # API de Machine Learning com IaC
 
 Projeto de uma API para predição utilizando o ML Flow, Terraform e AWS CDK.
-
-Pastas do repositório:
+<div style="display: inline_block"><br>
+  <img align="center" alt="python" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+  <img align="center" alt="terraform" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg">
+  <img align="center" alt="awsprovider" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg">
+  <img align="center" alt="mlflow" height="30" width="40" src="https://ia803407.us.archive.org/20/items/github.com-mlflow-mlflow_-_2021-04-30_16-23-15/cover.jpg">
+</div>
 
 ```
 ├── aws
